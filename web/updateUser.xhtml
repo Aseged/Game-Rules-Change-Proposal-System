@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader">
+                <h:form>
+                    <h:commandButton id="NewProposalButton" value="New Proposal" action="newProposal" styleClass="ControlPanelButtons"/>
+                   <h:commandButton id="UserControlButton" value="User Control" action="viewUsers" styleClass="ControlPanelButtons"/>
+                </h:form>
+            </div>
+            <div id="Search">
+                <h:form>
+                    <h:commandButton id="SearchButton" value="Go" action="proposalDetail" styleClass="confirmButtons"/>
+                    <h:inputText id="SearchInput" value="Search"  styleClass="SearchInput"/>
+                </h:form>
+            </div><br></br>
+            <h:form style="width: 60%; margin-left: auto; margin-right:  auto;">
+                <h:panelGrid columns="2" style="width: 100%;">
+                <f:facet name="header">
+                    <p:messages id="msgs" />
+                </f:facet>
+                <h3>Edit User Detail</h3>
+                
+                  Username
+                   <h:inputText value="#{ViewEditController.u.username}" required="true" requiredMessage=" Username is required" styleClass="loginText"/> 
+                   Password
+                   <h:inputText value="#{ViewEditController.u.password}" required="true" requiredMessage=" Username is required" styleClass="loginText"/>                    
+                   Full Name
+                   <h:inputText value="#{ViewEditController.u.fullname}" required="true" requiredMessage="Full name is required" styleClass="loginText"/>                   
+                   Email
+                   <h:inputText value="#{ViewEditController.u.email}" required="true" requiredMessage="Email is required" styleClass="loginText"/>
+                   Country
+                     <h:selectOneMenu id="country" value="#{ViewEditController.u.country}" required="true" requiredMessage="Surname is required." styleClass="loginText">
+                        <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{regBean.countries}" />
+                    </h:selectOneMenu>                   
+                   Roles
+                   <h:selectOneMenu id="roles" value="#{ViewEditController.u.roles}" required="true" requiredMessage="Role is required." styleClass="loginText">
+                        <f:selectItem itemLabel="Select Role" itemValue="" noSelectionOption="true" />
+                        <f:selectItems value="#{regBean.roles}" />
+                    </h:selectOneMenu> 
+                   Status
+                   <p:selectManyCheckbox style="width: 300px;" id="player" value="#{userBean.selectedConsoles}" required="true" requiredMessage="Status is required." layout="grid" columns="1">
+                                <f:selectItem itemLabel="A Player" itemValue="Player" />
+                                <f:selectItem itemLabel="A Coach" itemValue="Coach" />
+                                <f:selectItem itemLabel="An Official" itemValue="Official" />
+                                <f:selectItem itemLabel="Team Manager" itemValue="TeamManager" />
+                                <f:selectItem itemLabel="League Manager" itemValue="LeagueManager" />
+                                <f:selectItem itemLabel="An Officer" itemValue="Officer" />
+                   </p:selectManyCheckbox><br></br> 
+                  Last logged in
+                   <h:inputText value="#{ViewEditController.u.lastlog}" required="true" requiredMessage=" Username is required" styleClass="loginText"/> 
+                   Joined
+                   <h:inputText value="#{ViewEditController.u.joined}" required="true" requiredMessage=" Username is required" styleClass="loginText"/>                   
+                </h:panelGrid>
+        <h:commandButton value="Save" action="#{ViewEditController.editUser()}"  styleClass="confirmButtons"/> 
+                <h:commandButton value="Cancel" action="index" styleClass="cancelButtons"/> 
+                
+            </h:form>  
+    </div>
+   <div id="Footer"></div>       
+    
+    </h:body>
+</html>
+

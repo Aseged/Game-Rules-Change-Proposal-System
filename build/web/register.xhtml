@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" >
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader"></div>
+        <br></br>
+<h:form id="loginForm">
+    <h:panelGrid id="grid" cellpadding="5" columns="2" style="margin-bottom:10px" >
+        <f:facet name="header">
+            <p:messages id="msgs" />
+        </f:facet>
+ 
+        <h:outputLabel  value="Full name:" />
+        <h:inputText id="fullname" value="#{regBean.fullname}" required="true" requiredMessage="Full Name is required." styleClass="loginText"/>
+
+        <h:outputLabel  value="Username" />
+        <h:inputText id="username" value="#{regBean.username}" required="true" requiredMessage="Username is required." styleClass="loginText"/>
+        
+        <h:outputLabel  value="Password" />
+        <h:inputSecret  id="password" value="#{regBean.password}" required="true" requiredMessage="Password is required." styleClass="loginText"/>
+        
+        <h:outputLabel  value="Email" />
+        <h:inputText  id="email" value="#{regBean.email}" required="true" requiredMessage="Password is required." styleClass="loginText">
+            <f:validateRegex
+		pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+        </h:inputText>
+        
+        <h:outputLabel  value="Select Country.." />
+        <h:selectOneMenu id="country" value="#{regBean.country}" required="true" requiredMessage="Surname is required." styleClass="loginText">
+            <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+            <f:selectItems value="#{regBean.countries}" />
+        </h:selectOneMenu>
+        
+         <h:outputLabel  value="I am.." />
+         <p:selectManyCheckbox style="width: 300px;" id="player" value="#{regBean.selectedConsoles}" layout="grid" columns="1">
+            <f:selectItem itemLabel="A Player" itemValue="Player" />
+            <f:selectItem itemLabel="A Coach" itemValue="Coach" />
+            <f:selectItem itemLabel="An Official" itemValue="Official" />
+            <f:selectItem itemLabel="Team Manager" itemValue="TeamManager" />
+            <f:selectItem itemLabel="League Manager" itemValue="LeagueManager" />
+            <f:selectItem itemLabel="An Officer" itemValue="Officer" />
+        </p:selectManyCheckbox><br></br>
+         <h:commandButton value="Register" action="#{regBean.regUser()}" styleClass="loginButton" /> <br></br>
+         <h:commandButton value="Log In" action="login" styleClass="loginButton" />
+    </h:panelGrid>
+
+</h:form>
+   </div>
+   <div id="Footer"></div>
+    </h:body>
+</html>
+

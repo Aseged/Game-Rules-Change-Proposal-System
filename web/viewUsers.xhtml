@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader">
+                <h:form>
+                    <h:commandButton id="NewProposalButton" value="New Proposal" action="newProposal" styleClass="ControlPanelButtons"/>
+                   <h:commandButton id="UserControlButton" value="User Control" action="viewUsers" styleClass="ControlPanelButtons"/>
+                </h:form>
+            </div>
+            <div id="Search">
+                <h:form>
+                    <h:commandButton id="SearchButton" value="Go" action="proposalDetail" styleClass="confirmButtons"/>
+                    <h:inputText id="SearchInput" value="Search"  styleClass="SearchInput"/>
+                </h:form>
+            </div><br></br>          
+             <h:form style="width: 60%; margin-left: auto; margin-right:  auto;">
+                 
+                 
+                 <h:dataTable value="#{ViewEditController.findAllUsers()}" var="u"> 
+                    <h:column >
+                        #{u.username}
+                    </h:column>                   
+                    <h:column >
+                        #{u.password}
+                    </h:column>
+                    <h:column >
+                        #{u.fullname}
+                    </h:column>
+                    <h:column >
+                        #{u.email}
+                    </h:column>
+                    <h:column >
+                        #{u.country}
+                    </h:column>
+                    <h:column >
+                        #{u.roles}
+                    </h:column>
+                     <h:column >
+                        #{u.status}
+                    </h:column>
+                    <h:column >
+                        #{u.lastlog}
+                    </h:column>
+                    <h:column >
+                        #{u.joined}
+                    </h:column>                     
+                    <h:column >
+                        <h:commandButton value="Edit" action="#{ViewEditController.editUser(u)}" styleClass="confirmButtons"/>
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="Delete" onclick="return comfirm('Delet this user?')" action="#{ViewEditController.deleteUser(u)}"  styleClass="confirmButtons"/>
+
+                    </h:column>
+                </h:dataTable>
+             </h:form>  
+    </div>
+   <div id="Footer"></div>       
+    
+    </h:body>
+</html>
+

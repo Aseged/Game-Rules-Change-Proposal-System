@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader"></div>
+        <br></br>
+        
+        <div>
+            <h2>How to create database and start the application. </h2>
+            
+            1. In Netbeans JavaDB create a schema with name, username and password "WOLDESELASSIEA"<br></br>
+            2. Open the newly created schema to get to the tables folder. Right click on the tables  and choose 'Execute Command'<br></br>
+            3. Open and copy all the sql script provided in /Web/db folder. <br></br>
+            4. Paste the script in the Command window and click on execute. This will create the tables and populate them with initial data.<br></br> 
+            5. Run the application.<br></br>
+        </div>
+       <h:form id="loginForm">
+                <h:commandButton id="loginButton" action="login" value="Log In" styleClass="loginButton"/><br></br><br></br>
+                <h:commandButton id="registerButton" action="../start" value="Back" styleClass="loginButton"/><br></br><br></br>
+	</h:form>
+   </div>
+   <div id="Footer"></div>
+    </h:body>
+</html>
+

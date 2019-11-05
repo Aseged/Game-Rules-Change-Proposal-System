@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader"></div>
+            <br></br>
+            <div>
+                <h1>IFAF Rules Change Proposal and Voting System</h1><br></br> 
+                <h2>System Requirement Specification</h2> <br></br> 
+
+
+
+                <h3>1.	Introduction</h3> <br></br> 
+                <p>This document concerns the rule change proposals and voting system proposed for IFAF (International Federation of American Football). The system is to be used by all registered members of the federation as well as by the system administrators. As such, access privileges with different level of functionality and usability need are to be integrated. The purpose of this document is to give an insight into the scope, functionality, usability, security and integration requirement of the proposed system in all level of access. </p><b></b>
+
+                <h3>2.	Aim </h3><b></b>
+                <p>The IFAF members are invited to propose a change in IFAF rules each year. Currently, there is no software system to capture the proposed changes. In addition, voting on the newly proposed change is done either verbally or via e-mail. A new system is proposed that will digitalize the process of proposing a change, voting on the change and approving or declining the proposed change. The aim of the project is to design, build and test the proposed system to enable members to propose a change, view others proposal and vote on the proposal. It is also to enable administrators to control user accounts, accept or refuse new users, approve or refuse new proposals, remove any proposal/comment the administrators deem unnecessary or inappropriate. </p><b></b>
+
+                <h3>3.	Key personnel </h3><b></b>
+                Jim Briggs – System owner  <b></b>
+                Aseged Woldeselassie – System Design Authority  
+
+                <h3>4.	Rationale for development </h3><b></b>
+                <p>Currently, there is no system as such used for proposing a change of rules and voting on the proposed change. This unavailability of convenient system might lead to a reduced number of participants in both proposal and voting process. The proposed system will greatly improve members participation and transparency of voting. It will also be integrated with existing website for ease of use.</p><b></b>  
+
+                <h3>5.	Interactions and dependencies </h3>
+                <p>The system will be developed to run independently of any existing system, apart from existing IFAF website. All users, existing and new must register with the new system before they are able to use it. However, if there is an existing login system with username and password, data migration could be considered. This might include migrating all existing rules and codes used to identify/tag rules on which change is being proposed. </p><b></b> 
+
+                <h3>6.	Timetable and Scope</h3><b></b> 
+                <p>This project is scoped to be standalone. As such, the owner has the choice of running the system as part of existing website or use different domain. In terms of system development, the scope of the project is to enable users to propose changes to existing rules (tag to existing rule) in the form of text. It is also to enable users to comment and vote on proposed changes by others. Additional functionalities for administrators such as ability to control activities on user account is within the scope of the project. Search functionalities will also be added for use by both users and administrators.</p><b></b>  
+
+
+                <h3>7.	Data requirements </h3>
+                The following data dictionary indicates system critical data; 
+
+                <h3>7.1 Internally sourced data </h3><b></b>
+
+                Data Table 
+
+
+                <h3>7.2 Externally sourced data </h3><b></b>
+
+                Data Table
+
+                <h3>8.	Functional requirements  </h3>
+                The following functionality requirements have been identified; 
+
+                <h3>8.1 Users </h3>
+                •	Enable users to registration/login <br></br>
+                •	Enable users to propose a change or rule/s in the form of text<br></br> 
+                •	Enable users to amend or remove a proposed change (rules apply) <br></br>
+                •	Enable users to comment on a proposed change <br></br>
+                •	Enable users to amend or remove comments <br></br>
+                •	Enable users to vote on a proposed change  <br></br> 
+                •	Enable users to change or remove vote on proposed change (rules apply) <br></br>
+                •	Enable search functionality for searching proposals 
+
+                <h3>8.2 Administrators</h3><b></b>
+                •	Enable administrators to approve/decline new users <br></br>
+                •	Enable administrators to approve/decline proposed change <br></br>
+                •	Enable administrators to remove/hide proposed changes or comments <br></br>
+                •	Enable control over user accounts/activities including changing roles and suspending users.<br></br>
+                •	Integrate system with existing website (optional) <br></br>
+                •	Two step registration must be implemented for administrators to approve users. <br></br>
+                •	Show result of votes on proposed changes (optional) <br></br>
+                •	Enable search functionality for searching proposals  <br></br>
+
+                <h3>9.	non-functional requirements  </h3><b></b>
+
+                <h3>9.1 Users </h3><b></b>
+                •	Filtering functionality for proposals (popular, most recent, or specific date)
+
+                <h3>9.2 Administrators  </h3><b></b>
+                •	Enable analytical report/ close changes and comments on proposed change (optional) <br></br>
+                •	Enable email (SMPT) functionalities for notification <br></br>
+                •	Username/password retrieval functionalities (optional) <br></br>
+
+
+                <h3>10.	User Interface </h3><b></b> 
+
+                <h3>10.1 Users </h3><b></b>
+                User interface design is available in the next deliverable. 
+
+                Building a user profile where the user can manage a personal profile is optional but not a requirement. Hence, user will see proposed changes (index page) when first signing in. From there, all functionalities will be available for the user. Each proposal (sorted in ascending order) will show its corresponding comments, vote numbers and status. 
+
+                <h3>10.2 Administrators  </h3><b></b>
+                Administrator interface design is available in the next deliverable. 
+
+                The administrator interface will be the same as the user interface with some additional control enabled. These functionalities will enable the administrator to control user account actability. 
+
+                <h3>11.	Integration  </h3><b></b>
+                The system will be designed to be standalone from initiation. However, the federation has existing website. Integration of the proposed system into the existing website is plausible. Further, the federation might wish to perform data migration so that current users are automatically enrolled on the proposed system. The exact integration requirement is yet to be established, thus not a functional requirement at this point. 
+
+                <h3>13.	Development hardware/software </h3><b></b>
+                No requirement has been specified in terms of development platform. Therefore, the system will be developed as mobile first. (unless specified otherwise)
+
+                <h3>14.	Constraints  </h3><b></b>
+                No constraint identifies at this point. 
+
+                <h3>15.	Maintenance procedure </h3><b></b>
+                Let this document be V1.1 of a requirement specification document. Any changes hereafter must be logged into the change log found at the bottom of this document. The change logged shall reflect maintenance or changes to original specification that have already been implemented. Any technical or non-technical maintenance performed will be logged in by the change proposer or system design authority. 
+
+                <h3>16.	Future work and proofing  </h3><b></b>
+                No future work identified at this point.
+
+
+                <h3>17.	Change log  </h3><b></b>
+
+
+                V1.1 	29/02/2018 	Aseged W. 	Requirement specification created <br></br>
+                V1.2	05/02/2018	Aseged W.	Changed admin buttons position from left to right side of the view. <br></br>
+                V1.2	15/03/2018	Aseged w. 	Design constraint identified with jsf dataTable. Enable tabular view instead <br></br>
+
+
+                <h3>18.	User Interface Design; First Iteration </h3><b></b>
+                As stated above, the application can be part of the existing IFAF website or a stand-alone application. Here, seen as the organization already have a website, and seen as no requirement have been specified regarding this, we are going to assume that the application will be part of the existing website. 
+
+                The interface will be dynamic. This means we will use the same index page, however, we will hide or show additional functionalities depending on the user’s role. Once the user clicks on the link leading to the application, they will see either the login or registration page as follows;
+
+                For design, please refer back to the specification document. 
+
+                <h3>18.1. Dynamic Functionalities </h3><b></b>
+                Some functionalities will simply be deactivated or hidden from the user. For instance, the Vote button and dropdown menu on the index page will only show if the user role includes voting. Another example is that if the proposal being viewed belongs to the user, then option for editing or withdrawing the proposal will be available. In the case of administrators, these functionalities will be available on all proposals and comments.  
+
+
+
+
+                <h3>19.	Organizational Structure Diagram; First Iteration </h3><b></b>
+
+                The following organisational chart shows how the user will navigate through the views shown above in the user interaction design. Most of the view can be navigated to through the index page. There are some dedicated buttons that will be used for navigating to a specific control panel views. Otherwise, we will be using links on each view to navigate to corresponding views.
+
+                Org Chart
+
+
+
+
+
+
+
+            </div>
+            <h:form id="loginForm">
+                <h:commandButton id="loginButton" action="../login" value="Log In" styleClass="loginButton"/><br></br><br></br>
+                <h:commandButton id="registerButton" action="../start" value="Back" styleClass="loginButton"/><br></br><br></br>
+            </h:form>
+        </div>
+        <div id="Footer"></div>
+    </h:body>
+</html>
+

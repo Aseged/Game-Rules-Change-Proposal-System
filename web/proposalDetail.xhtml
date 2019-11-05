@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader">
+                <h:form>
+                    <h:commandButton id="NewProposalButton" value="New Proposal" action="newProposal" styleClass="ControlPanelButtons"/>
+                   <h:commandButton id="UserControlButton" value="User Control" action="viewUsers" styleClass="ControlPanelButtons"/>
+                </h:form>
+            </div>
+            <div id="Search">
+                <h:form>
+                    <h:commandButton id="SearchButton" value="Go" action="proposalDetail" styleClass="confirmButtons"/>
+                    <h:inputText id="SearchInput" value="Search"  styleClass="SearchInput"/>
+                </h:form>
+            </div><br></br>
+          
+      <h:form style="width: 60%; margin-left: auto; margin-right:  auto;"> 
+        <table>
+             <tr>
+    		<h3>Leave comment</h3>
+    
+            </tr>
+    
+                <tr>
+                <td><h:inputTextarea value="#{cmInsertBean.comment}" cols="80" rows="10" required="true" requiredMessage="Required" /></td>
+    		</tr>
+
+    		<tr>
+                    <td valign="top">
+                        <h:commandButton value="Submit" action="#{cmInsertBean.checkCommentIn()}" styleClass="confirmButtons"/> 
+                        <h:commandButton value="Cancel" action="index" styleClass="cancelButtons"/> </td>
+                      </tr>
+    	</table>
+    		
+      </h:form>
+       <h:form style="width: 60%; margin-left: auto; margin-right:  auto;">               
+                 <h:dataTable value="#{ViewEditController.findAllComments()}" var="c"> 
+                    <h:column >
+                        #{c.commentedat}
+                    </h:column>
+                    <h:column >
+                        <h3><h:commandLink value="#{c.id}" action="index" /></h3>
+                    </h:column>
+                    <h:column >
+                        #{c.comment}
+                    </h:column>
+                    <h:column >
+                        <h:commandButton value="Edit" action="#{ViewEditController.editComments(c)}" styleClass="confirmButtons"/>
+                    </h:column>
+                    <h:column >
+                        <h:commandButton value="Delete" action="#{ViewEditController.deleteComment(comments)}" styleClass="confirmButtons"/>
+
+                    </h:column>
+                </h:dataTable> 
+   </h:form>             
+        
+    </div>
+   <div id="Footer"></div>       
+    
+    </h:body>
+</html>
+

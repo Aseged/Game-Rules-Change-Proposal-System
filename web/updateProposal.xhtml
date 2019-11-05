@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="CSS/CSS.main.css"/>
+        <title>IFAF Rules Change Proposals</title>
+    </h:head>
+    <h:body>
+        <div id="Header">
+            
+            <div id="headeContentHolder">
+                <img src="img/HeaderImg.PNG" id="Headerimg" alt="Header Image"/>                
+            </div>
+        </div>
+        <div id="Main">
+            <div id="MainHeader">
+                <h:form>
+                    <h:commandButton id="NewProposalButton" value="New Proposal" action="newProposal" styleClass="ControlPanelButtons"/>
+                   <h:commandButton id="UserControlButton" value="User Control" action="viewUsers" styleClass="ControlPanelButtons"/>
+                </h:form>
+            </div>
+            <div id="Search">
+                <h:form>
+                    <h:commandButton id="SearchButton" value="Go" action="proposalDetail" styleClass="confirmButtons"/>
+                    <h:inputText id="SearchInput" value="Search"  styleClass="SearchInput"/>
+                </h:form>
+            </div><br></br>
+            <h:form style="width: 60%; margin-left: auto; margin-right:  auto;">
+                <h:panelGrid columns="2" style="width: 100%;">
+                   Title
+                   <h:inputText id="Title" value="#{ViewEditController.p.title}" required="true" requiredMessage="Required" styleClass="loginText"/><br></br><br></br>
+                   <h:message for="Title" style="color:red" />
+                   Description 
+                   <h:inputTextarea id="Description" value="#{ViewEditController.p.description}" required="true" requiredMessage="Required" style="width: 100%; height: 100px;" /><br></br><br></br>
+                   <h:message for="username" style="color:red" />
+                   Justification
+                   <h:inputTextarea id="Justification" value="#{ViewEditController.p.justification}" required="true" requiredMessage="Required" style="width: 100%; height: 100px;" /><br></br><br></br>
+                   <h:message for="Justification" style="color:red" />
+                   Vote Status
+                   <h:inputText id="votestatus" value="#{ViewEditController.p.votestatus}" required="true" requiredMessage="Required" styleClass="loginText"/><br></br><br></br>
+                   <h:message for="votestatus" style="color:red" />
+                   Vote Deadline
+                   <h:inputText value="#{ViewEditController.p.votedeadline}" styleClass="loginText">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                </h:panelGrid> 
+                <h:commandButton value="Save" action="#{ViewEditController.editProposal()}"  styleClass="confirmButtons"/> 
+                <h:commandButton value="Cancel" action="index" styleClass="cancelButtons"/> 
+            </h:form> 
+    </div>
+   <div id="Footer"></div>       
+    
+    </h:body>
+</html>
+
